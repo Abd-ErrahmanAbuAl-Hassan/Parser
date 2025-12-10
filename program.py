@@ -1,4 +1,5 @@
 from parser_1 import Parser
+from scanner25 import Scanner
 
 if __name__ == "__main__":
     code = """
@@ -9,6 +10,15 @@ if __name__ == "__main__":
         }
     }
     """
+
+    scanner = Scanner()
+    tokens = scanner.tokenize(code)
+
+    print("*" * 50)
+    print("Token List:")
+    for t in tokens:
+        print(t)
+    print("*" * 50)
 
     parser = Parser()
     parser.load_tokens(code)
